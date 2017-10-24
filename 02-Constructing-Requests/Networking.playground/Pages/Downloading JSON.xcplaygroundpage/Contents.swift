@@ -21,7 +21,7 @@ import PlaygroundSupport
  
 */
 
-let url = URL(string: "https://jsonplaceholder.typicode.com/photos/1")!
+let url = URL(string: "http://pokeapi.co/api/v2/generation/3/")!
 
 var request = URLRequest(url: url)
 request.httpMethod = "GET"
