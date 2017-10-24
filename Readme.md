@@ -30,7 +30,6 @@ Students should be able to:
 ## Course Schedule
 
 - #### Week 1
-    - [Intro to Networking in iOS](01-Intro-to-Networking)
     - [Constructing Requests with URLs, URLRequests And URLSessions](02-Constructing-Requests)
     - [Modeling data & Error Handling](03-Modeling-data)
     
@@ -41,6 +40,7 @@ Students should be able to:
 
 - #### Week 3
     - [Intro to Backend Systems - Creating a Flask API](07-Intro-to-Backend)
+    - [Databases](08-Databases)
     - [Resources and Routes](08-Resources-and-Routes)
     
 - #### Week 4
@@ -61,5 +61,3 @@ To pass the course, students will have:
 
     1. Completed all challenges.
     
-
-# mobile2

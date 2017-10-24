@@ -1,19 +1,29 @@
 # Project - Travel App API Project Spec
 
+Here is a link to some starter code for building this project:
+
+[Trip Planner Flask Starter](https://github.com/Product-College-Labs/trip-planner)
 
 ## Overview
 
 We will be building a trip planning app that stores a list of trips for a user.
 The goal of this project is for you to practice everything you have learnt about building an API.
 
+Users can create a trip, add waypoints to a trip (a list of stops a user will take in a trip) and mark a trip as completed.
+
 ### The API
 
 Your API should contain/use:
 
-1. a relational database to store all our trips.(SQL, Postgres)
-2. a trips resource - you should be able to create, list, show, and destroy trips.
+1. a non-relational database to store all our trips.(mongodb)
+2. a trips resource - you should be able to create, list, show, update and destroy trips.
 3. completed trips are marked as completed.
 4. unit tests for all routes.
+
+## Client
+
+When you are done with the Flask API, write an iOS client to connect and display the list of trips.
+Authenticate the user, display trips and a detail of the trip with waypoints and completed status of each trip.
 
 
 ### Routes and Actions
@@ -44,6 +54,8 @@ Create unit tests for and then implement the following new resources and routes:
 
 ## Project Milestones
 
+Backend: 
+
 - [x] User - Create/Update a user - post request
 - [x] User - Get a user with a get request
 
@@ -54,9 +66,8 @@ Create unit tests for and then implement the following new resources and routes:
 - [x] User - Sign up a user, hash the password
 - [x] User - Sign in a user, check password with hash in database
 
+iOS Client:
 
-## Client
-
-When you are done with the Flask API, write an iOS client to connect and display the list of trips.
-Authenticate the user, display trips and a detail of the trip with waypoints and completed status of each trip.
+- [x] Authenticates user with HTTP Basic Auth
+- [x] Display list of trips, trip waypoints and completed status of each trip
 
