@@ -40,6 +40,7 @@ let url = URL(string: "www.google.com/images/434.png")!
 var request = URLRequest(url: url)
 request.httpMethod = "GET"
 
+
 // 3
 let session = URLSession.shared
 
