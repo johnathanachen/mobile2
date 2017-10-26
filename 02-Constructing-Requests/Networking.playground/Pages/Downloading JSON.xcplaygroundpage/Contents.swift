@@ -31,8 +31,15 @@ let session = URLSession.shared
 let task = session.dataTask(with: request) { (data, response, error) in
     
     if let data = data {
-        let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+        let json = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
         print(json)
+        
+//        if let pokemonName = json!["name"] as? NSDictionary
+//        {
+//            print(pokemonName)
+//        } else {
+//            print("non")
+//        }
     }
 }
 
@@ -76,22 +83,22 @@ task.resume()
 
 //: ### Uploading JSON data
 //: Lets define our JSON type as a dictionary of String to Any
-typealias JSON = [String: Any]
-
-var postReq = URLRequest(url: URL(string: "https://httpbin.org/post")!)
-
-let jsonDictionary: JSON = ["user": ["first_name": "Eliel", "last_name": "Gordon"]]
-let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary, options: JSONSerialization.WritingOptions.prettyPrinted)
-
-postReq.httpMethod = "POST"
-postReq.httpBody = jsonData
-
-session.dataTask(with: postReq) { (data, resp, err) in
-    if let data = data {
-        let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
-        print(json)
-    }
-}.resume()
+//typealias JSON = [String: Any]
+//
+//var postReq = URLRequest(url: URL(string: "https://httpbin.org/post")!)
+//
+//let jsonDictionary: JSON = ["user": ["first_name": "Eliel", "last_name": "Gordon"]]
+//let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary, options: JSONSerialization.WritingOptions.prettyPrinted)
+//
+//postReq.httpMethod = "POST"
+//postReq.httpBody = jsonData
+//
+//session.dataTask(with: postReq) { (data, resp, err) in
+//    if let data = data {
+//        let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+//        print(json)
+//    }
+//}.resume()
 
 
 /*:

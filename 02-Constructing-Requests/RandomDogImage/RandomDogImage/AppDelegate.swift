@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Airbnb_API_CodableType
+//  RandomDogImage
 //
-//  Created by Johnathan Chen on 10/24/17.
+//  Created by Johnathan Chen on 10/25/17.
 //  Copyright © 2017 JCSwifty. All rights reserved.
 //
 
