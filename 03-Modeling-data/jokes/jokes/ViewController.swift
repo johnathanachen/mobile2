@@ -10,26 +10,35 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var typeLabel: UILabel!
+  
     @IBOutlet weak var jokeLabel: UILabel!
     @IBOutlet weak var punchLineLabel: UILabel!
     
+    @IBAction func answerButton(_ sender: UIButton) {
+        punchLineLabel.isHidden = false
+    }
+    @IBAction func newJokeButton(_ sender: UIButton) {
+        startJoke()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        startJoke()
+    }
+    
+    func startJoke() {
         let networking = Network()
         networking.getJoke(completion: {jokelist in
             DispatchQueue.main.sync {
-                self.typeLabel.text = jokelist?.type
                 self.jokeLabel.text = jokelist?.setup
                 self.punchLineLabel.text = jokelist?.punchline
+                self.punchLineLabel.isHidden = true
                 self.reloadInputViews()
             }
-            
         })
-        
-        }
-        
     }
+    
+}
 
 
 struct Jokes : Codable {

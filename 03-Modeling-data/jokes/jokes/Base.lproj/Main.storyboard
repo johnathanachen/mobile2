@@ -8,6 +8,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Verdana.ttf">
+            <string>Verdana</string>
+        </array>
+        <array key="VerdanaItalic.ttf">
+            <string>Verdana-Italic</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -17,51 +25,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joke" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTr-Kp-8St">
-                                <rect key="frame" x="37" y="89" width="300" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Punch line" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2um-T9-MUf">
-                                <rect key="frame" x="37" y="178" width="300" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2a-TO-SbK">
-                                <rect key="frame" x="37" y="43" width="300" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joke" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTr-Kp-8St">
+                                <rect key="frame" x="37" y="89" width="300" height="24.5"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbV-gz-MKQ">
-                                <rect key="frame" x="154" y="503" width="67" height="30"/>
+                                <rect key="frame" x="73" y="550" width="229" height="50"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="f8D-R6-LL0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="New Joke"/>
+                                <connections>
+                                    <action selector="newJokeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YEk-ch-F2U"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3F3-UZ-SZu">
+                                <rect key="frame" x="73" y="484" width="229" height="50"/>
+                                <color key="backgroundColor" red="0.2473681539" green="0.90771732230000002" blue="0.27513595289999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WLM-FJ-CPi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Answer"/>
+                                <connections>
+                                    <action selector="answerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Vt-Sk-bBh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Punch line" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2um-T9-MUf">
+                                <rect key="frame" x="37" y="144" width="300" height="21"/>
+                                <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.077062465250000003" green="0.67440301179999995" blue="0.74667936560000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2um-T9-MUf" secondAttribute="trailing" constant="38" id="027-O7-5SM"/>
-                            <constraint firstItem="J2a-TO-SbK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="09X-ht-km8"/>
-                            <constraint firstItem="EbV-gz-MKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="154" id="Fdg-Cv-ruu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EbV-gz-MKQ" secondAttribute="bottom" constant="134" id="HRB-QZ-if0"/>
-                            <constraint firstItem="2um-T9-MUf" firstAttribute="top" secondItem="uTr-Kp-8St" secondAttribute="bottom" constant="68" id="Hp5-7i-egb"/>
-                            <constraint firstItem="J2a-TO-SbK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="fSQ-wt-LYc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J2a-TO-SbK" secondAttribute="trailing" constant="38" id="nk9-gY-0eA"/>
-                            <constraint firstItem="EbV-gz-MKQ" firstAttribute="top" secondItem="2um-T9-MUf" secondAttribute="bottom" constant="304.5" id="o91-NQ-GtT"/>
-                            <constraint firstItem="uTr-Kp-8St" firstAttribute="top" secondItem="J2a-TO-SbK" secondAttribute="bottom" constant="25" id="rY6-Rs-YRO"/>
-                            <constraint firstItem="uTr-Kp-8St" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="rgg-Eu-RYp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EbV-gz-MKQ" secondAttribute="trailing" constant="154" id="rjb-xl-A78"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uTr-Kp-8St" secondAttribute="trailing" constant="38" id="sho-II-Wyg"/>
-                            <constraint firstItem="2um-T9-MUf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="u9r-L3-xxu"/>
+                            <constraint firstItem="uTr-Kp-8St" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="0Ty-M4-MLj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3F3-UZ-SZu" secondAttribute="trailing" constant="73" id="2Xm-rY-V4K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uTr-Kp-8St" secondAttribute="trailing" constant="38" id="8Kr-KK-8KS"/>
+                            <constraint firstItem="2um-T9-MUf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="D6x-Ll-bcT"/>
+                            <constraint firstItem="EbV-gz-MKQ" firstAttribute="top" secondItem="3F3-UZ-SZu" secondAttribute="bottom" constant="16" id="Hk6-G9-N6C"/>
+                            <constraint firstItem="3F3-UZ-SZu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="OLg-Qc-hdV"/>
+                            <constraint firstItem="uTr-Kp-8St" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="69" id="Paf-Cz-gFD"/>
+                            <constraint firstItem="EbV-gz-MKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="SXa-Dk-0px"/>
+                            <constraint firstItem="2um-T9-MUf" firstAttribute="top" secondItem="uTr-Kp-8St" secondAttribute="bottom" constant="30.5" id="hi4-Oa-SuI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2um-T9-MUf" secondAttribute="trailing" constant="38" id="iuk-vl-G2M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EbV-gz-MKQ" secondAttribute="trailing" constant="73" id="kON-ub-nCW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EbV-gz-MKQ" secondAttribute="bottom" constant="67" id="sCu-lc-bfY"/>
+                            <constraint firstItem="3F3-UZ-SZu" firstAttribute="top" secondItem="2um-T9-MUf" secondAttribute="bottom" constant="319" id="uwV-nd-Ql7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="jokeLabel" destination="uTr-Kp-8St" id="2Ii-R3-79Z"/>
                         <outlet property="punchLineLabel" destination="2um-T9-MUf" id="Wgs-pp-eMB"/>
-                        <outlet property="typeLabel" destination="J2a-TO-SbK" id="8Ck-AH-pWd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
