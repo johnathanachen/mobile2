@@ -21,6 +21,7 @@ struct Anime {
 extension Anime: Decodable {
     
     // Declaring our keys
+    // 1
     enum Keys: String, CodingKey {
         case id
         case attributes
@@ -39,7 +40,9 @@ extension Anime: Decodable {
         case titles
         case posterImage
     }
-
+    
+    // 2
+    // Manually Decode
     init(from decoder: Decoder) throws {
         
         let container = try decoder.container(keyedBy: Keys.self) // defining our (keyed) container
@@ -55,11 +58,11 @@ extension Anime: Decodable {
         // Id - top level in data array
         let id: String = try container.decode(String.self, forKey: .id)
         
-//        // Poster Image
+        // Poster Image
         let thumbnailContainer = try attributesContainer.nestedContainer(keyedBy: ThumbnailKeys.self, forKey: .posterImage)
-//
-        let thumbnail: URL = try thumbnailContainer.decode(URL.self, forKey: .thumbnail)
 
+        let thumbnail: URL = try thumbnailContainer.decode(URL.self, forKey: .thumbnail)
+        // Initialize
         self.init(title: title, thumbnail: thumbnail, id: id)
     }
 }
