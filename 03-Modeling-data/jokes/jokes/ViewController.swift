@@ -79,16 +79,17 @@ class Network {
         let task = session.dataTask(with: request){data,response,error in
             
             guard let data = data else {return}
-            do{
+            do {
                 let jokeList = try JSONDecoder().decode(Jokes.self, from: data)
                 
                 return completion(jokeList)
-                
             }
-            catch{ print("error")}
-    }
+            catch {
+                print("error")
+            }
+        }
         task.resume()
-}
+    }
 }
 
 
