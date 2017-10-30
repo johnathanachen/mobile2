@@ -10,10 +10,14 @@ import UIKit
 
 class AirbnbViewController: UIViewController {
 
+    @IBOutlet weak var imageLabel: UIImageView!
+    @IBOutlet weak var cityLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let networking = Networking()
-        networking.getListings(completion: { listings in listings })
+        networking.getListings { (listing) in print(listing) }
+        
     }
 
 }
@@ -40,21 +44,55 @@ struct ListingList : Decodable {
     let search_results: [AirbnbListing]
 }
 
+extension AirbnbListing
+{
+    enum Keys: String, CodingKey
+    {
+        case listing
+    }
+    
+    enum ListingKeys: String, CodingKey{
+        case bathrooms
+        case bedrooms
+        case beds
+        case city
+        case picture_url = "picture_url"
+    }
+    
+    init(from decoder:Decoder) throws {
+        let container = try decoder.container(keyedBy: Keys.self) // Defining out (keyed) container
+        print(container)
+        let listingContainer = try container.nestedContainer(keyedBy: ListingKeys.self, forKey: .listing)
+        print(listingContainer)
+        let bathrooms = try listingContainer.decode(Double.self, forKey: .bathrooms)
+        let bedrooms = try listingContainer.decode(Int.self, forKey: .bedrooms)
+        let beds = try listingContainer.decode(Double.self, forKey: .beds)
+        let city = try listingContainer.decode(String.self, forKey: .city)
+        let picture_url = try listingContainer.decode(String.self, forKey: .picture_url)
+        
+        self.init(bathroom: bathrooms, bedrooms: bedrooms, beds: beds, city: city, picture_url: picture_url)
+    }
+}
+
 
 class Networking {
-    let session = URLSession.shared
-    let baseURL = URL(string: "https://api.airbnb.com/v2//search_results?client_id=915pw2pnf4h1aiguhph5gc5b2")!
-    
-    func getListings(completion: @escaping (AirbnbListing?)->Void) {
+    func getListings(completion: @escaping (AirbnbListing?)->Void)
+    {
+        let session = URLSession.shared
+        let baseURL = URL(string: "https://api.airbnb.com/v2//search_results?client_id=915pw2pnf4h1aiguhph5gc5b2")!
         let urlRequest = URLRequest(url: baseURL)
+        
         let task = session.dataTask(with: urlRequest) { data, response, error in
-            guard let data = data else {return}
-            do {
-                let propertyList = try? JSONDecoder().decode(ListingList.self, from: data)
-                print(propertyList!)
-            }
-            catch {
-                print("error")
+            if let data = data
+            {
+                guard let list = try? JSONDecoder().decode(ListingList.self, from: data) else {
+                    return print("failed")
+                }
+        
+                let listings = list.search_results
+                
+                print(listings)
+    
             }
         }
         task.resume()
