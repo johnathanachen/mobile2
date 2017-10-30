@@ -12,15 +12,26 @@ class AirbnbViewController: UIViewController {
 
     @IBOutlet weak var imageLabel: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let networking = Networking()
-        networking.getListings { (listing) in print(listing) }
+        startDisplay()
         
+    }
+    
+    func startDisplay() {
+        let networking = Networking()
+        networking.getListings(completion: {listings in
+            DispatchQueue.main.sync {
+                print(listings)
+                self.reloadInputViews()
+                print(self.cityLabel.text)
+            }
+        })
     }
 
 }
+
+
 
 struct AirbnbListing: Codable
 {
@@ -60,10 +71,8 @@ extension AirbnbListing
     }
     
     init(from decoder:Decoder) throws {
-        let container = try decoder.container(keyedBy: Keys.self) // Defining out (keyed) container
-        print(container)
+        let container = try decoder.container(keyedBy: Keys.self)
         let listingContainer = try container.nestedContainer(keyedBy: ListingKeys.self, forKey: .listing)
-        print(listingContainer)
         let bathrooms = try listingContainer.decode(Double.self, forKey: .bathrooms)
         let bedrooms = try listingContainer.decode(Int.self, forKey: .bedrooms)
         let beds = try listingContainer.decode(Double.self, forKey: .beds)
@@ -74,28 +83,44 @@ extension AirbnbListing
     }
 }
 
+// MARK: - Service layer
+enum Result<T>
+{
+    case success(T)
+    case failure(NetworkError)
+}
+
+enum NetworkError: Error
+{
+    case couldNotParse
+    case noData
+    case networkError
+}
+
+
 
 class Networking {
-    func getListings(completion: @escaping (AirbnbListing?)->Void)
+    func getListings(completion: @escaping (Result<[AirbnbListing]>)->Void)
     {
         let session = URLSession.shared
         let baseURL = URL(string: "https://api.airbnb.com/v2//search_results?client_id=915pw2pnf4h1aiguhph5gc5b2")!
         let urlRequest = URLRequest(url: baseURL)
         
-        let task = session.dataTask(with: urlRequest) { data, response, error in
+        session.dataTask(with: urlRequest) { (data, response, error) in
             if let data = data
             {
                 guard let list = try? JSONDecoder().decode(ListingList.self, from: data) else {
-                    return print("failed")
+                    return completion(Result.failure(NetworkError.couldNotParse))
                 }
-        
+                
                 let listings = list.search_results
                 
                 print(listings)
-    
+                
+                completion(listings)
+                
             }
-        }
-        task.resume()
+        }.resume()
     }
 }
 
