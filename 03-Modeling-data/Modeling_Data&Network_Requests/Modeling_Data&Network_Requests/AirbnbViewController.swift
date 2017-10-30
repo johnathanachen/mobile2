@@ -100,7 +100,7 @@ enum NetworkError: Error
 
 
 class Networking {
-    func getListings(completion: @escaping (Result<[AirbnbListing]>)->Void)
+    func getListings(completion: @escaping ([AirbnbListing])->Void)
     {
         let session = URLSession.shared
         let baseURL = URL(string: "https://api.airbnb.com/v2//search_results?client_id=915pw2pnf4h1aiguhph5gc5b2")!
@@ -110,7 +110,8 @@ class Networking {
             if let data = data
             {
                 guard let list = try? JSONDecoder().decode(ListingList.self, from: data) else {
-                    return completion(Result.failure(NetworkError.couldNotParse))
+//                    return completion(Result.failure(NetworkError.couldNotParse))
+                    return
                 }
                 
                 let listings = list.search_results
