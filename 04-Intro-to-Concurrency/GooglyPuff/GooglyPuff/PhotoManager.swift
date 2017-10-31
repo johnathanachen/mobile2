@@ -46,22 +46,26 @@ class PhotoManager {
     DispatchQueue.global(qos: .userInitiated).async {
         var storedError: NSError?
         let downloadGroup = DispatchGroup()
-        for address in [overlyAttachedGirlfriendURLString,
+        let addresses = [overlyAttachedGirlfriendURLString,
                         successKidURLString,
-                        lotsOfFacesURLString] {
-                            let url = URL(string: address)
-                            downloadGroup.enter()
-                            let photo = DownloadPhoto(url: url!) {
-                                _, error in
-                                if error != nil {
-                                    storedError = error
-                                }
-                                downloadGroup.leave()
-                            }
-                            PhotoManager.sharedManager.addPhoto(photo)
-                      }
-        downloadGroup.wait()
-        DispatchQueue.main.async {
+                        lotsOfFacesURLString]
+        let _ = DispatchQueue.global(qos: .userInitiated)
+        DispatchQueue.concurrentPerform(iterations: addresses.count) {
+            i in
+            let index = Int(i)
+            let address = addresses[index]
+            let url = URL(string: address)
+            downloadGroup.enter()
+            let photo = DownloadPhoto(url: url!) {
+                _, error in
+                if error != nil {
+                    storedError = error
+                }
+                downloadGroup.leave()
+            }
+            PhotoManager.sharedManager.addPhoto(photo)
+      }
+        downloadGroup.notify(queue: DispatchQueue.main){
             completion?(storedError)
     }
   }
