@@ -43,22 +43,29 @@ class PhotoManager {
   }
   
   func downloadPhotosWithCompletion(_ completion: BatchPhotoDownloadingCompletionClosure?) {
-    var storedError: NSError?
-    for address in [overlyAttachedGirlfriendURLString,
-                    successKidURLString,
-                    lotsOfFacesURLString] {
-                      let url = URL(string: address)
-                      let photo = DownloadPhoto(url: url!) {
-                        _, error in
-                        if error != nil {
-                          storedError = error
-                        }
+    DispatchQueue.global(qos: .userInitiated).async {
+        var storedError: NSError?
+        let downloadGroup = DispatchGroup()
+        for address in [overlyAttachedGirlfriendURLString,
+                        successKidURLString,
+                        lotsOfFacesURLString] {
+                            let url = URL(string: address)
+                            downloadGroup.enter()
+                            let photo = DownloadPhoto(url: url!) {
+                                _, error in
+                                if error != nil {
+                                    storedError = error
+                                }
+                                downloadGroup.leave()
+                            }
+                            PhotoManager.sharedManager.addPhoto(photo)
                       }
-                      PhotoManager.sharedManager.addPhoto(photo)
+        downloadGroup.wait()
+        DispatchQueue.main.async {
+            completion?(storedError)
     }
-    
-    completion?(storedError)
   }
+}
   
   fileprivate func postContentAddedNotification() {
     NotificationCenter.default.post(name: Notification.Name(rawValue: photoManagerContentAddedNotification), object: nil)
