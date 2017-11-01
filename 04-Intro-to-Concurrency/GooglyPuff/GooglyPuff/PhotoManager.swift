@@ -46,28 +46,42 @@ class PhotoManager {
     DispatchQueue.global(qos: .userInitiated).async {
         var storedError: NSError?
         let downloadGroup = DispatchGroup()
-        let addresses = [overlyAttachedGirlfriendURLString,
-                        successKidURLString,
-                        lotsOfFacesURLString]
-        let _ = DispatchQueue.global(qos: .userInitiated)
-        DispatchQueue.concurrentPerform(iterations: addresses.count) {
-            i in
-            let index = Int(i)
-            let address = addresses[index]
-            let url = URL(string: address)
+        var addresses = [overlyAttachedGirlfriendURLString,
+                         successKidURLString,
+                         lotsOfFacesURLString]
+        addresses += addresses + addresses // 1
+        var blocks: [DispatchWorkItem] = [] // 2
+        
+        for i in 0 ..< addresses.count {
             downloadGroup.enter()
-            let photo = DownloadPhoto(url: url!) {
-                _, error in
-                if error != nil {
-                    storedError = error
+            let block = DispatchWorkItem(flags: .inheritQoS) { // 3
+                let index = Int(i)
+                let address = addresses[index]
+                let url = URL(string: address)
+                let photo = DownloadPhoto(url: url!) {
+                    _, error in
+                    if error != nil {
+                        storedError = error
+                    }
+                    downloadGroup.leave()
                 }
-                downloadGroup.leave()
+                PhotoManager.sharedManager.addPhoto(photo)
             }
-            PhotoManager.sharedManager.addPhoto(photo)
-      }
-        downloadGroup.notify(queue: DispatchQueue.main){
+            blocks.append(block)
+            DispatchQueue.main.async(execute: block) // 4
+        }
+        
+        for block in blocks[3 ..< blocks.count] { // 5
+            let cancel = arc4random_uniform(2) // 6
+            if cancel == 1 {
+                block.cancel() // 7
+                downloadGroup.leave() // 8
+            }
+        }
+        
+        downloadGroup.notify(queue: DispatchQueue.main) {
             completion?(storedError)
-    }
+        }
   }
 }
   
