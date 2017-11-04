@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		B88A6DCF1FA7EDE0001F30B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88A6DCE1FA7EDE0001F30B3 /* AppDelegate.swift */; };
-		B88A6DD11FA7EDE0001F30B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88A6DD01FA7EDE0001F30B3 /* ViewController.swift */; };
 		B88A6DD41FA7EDE0001F30B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88A6DD21FA7EDE0001F30B3 /* Main.storyboard */; };
 		B88A6DD61FA7EDE0001F30B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B88A6DD51FA7EDE0001F30B3 /* Assets.xcassets */; };
 		B88A6DD91FA7EDE0001F30B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88A6DD71FA7EDE0001F30B3 /* LaunchScreen.storyboard */; };
+		B8A59FC41FAAA7CE005ED285 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A59FC31FAAA7CE005ED285 /* Networking.swift */; };
+		B8A59FCA1FAAAAE5005ED285 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A59FC91FAAAAE5005ED285 /* PostsViewController.swift */; };
+		B8A8ACC91FACED6B009B2245 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8ACC81FACED6B009B2245 /* PostModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B88A6DCB1FA7EDE0001F30B3 /* Product_Hunt_API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Product_Hunt_API.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B88A6DCE1FA7EDE0001F30B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B88A6DD01FA7EDE0001F30B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B88A6DD31FA7EDE0001F30B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B88A6DD51FA7EDE0001F30B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B88A6DD81FA7EDE0001F30B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B88A6DDA1FA7EDE0001F30B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8A59FC31FAAA7CE005ED285 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		B8A59FC91FAAAAE5005ED285 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		B8A8ACC81FACED6B009B2245 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				B88A6DCE1FA7EDE0001F30B3 /* AppDelegate.swift */,
-				B88A6DD01FA7EDE0001F30B3 /* ViewController.swift */,
+				B8A59FC91FAAAAE5005ED285 /* PostsViewController.swift */,
+				B8A8ACC81FACED6B009B2245 /* PostModel.swift */,
+				B8A59FC31FAAA7CE005ED285 /* Networking.swift */,
 				B88A6DD21FA7EDE0001F30B3 /* Main.storyboard */,
 				B88A6DD51FA7EDE0001F30B3 /* Assets.xcassets */,
 				B88A6DD71FA7EDE0001F30B3 /* LaunchScreen.storyboard */,
@@ -136,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B88A6DD11FA7EDE0001F30B3 /* ViewController.swift in Sources */,
+				B8A59FC41FAAA7CE005ED285 /* Networking.swift in Sources */,
+				B8A8ACC91FACED6B009B2245 /* PostModel.swift in Sources */,
 				B88A6DCF1FA7EDE0001F30B3 /* AppDelegate.swift in Sources */,
+				B8A59FCA1FAAAAE5005ED285 /* PostsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
