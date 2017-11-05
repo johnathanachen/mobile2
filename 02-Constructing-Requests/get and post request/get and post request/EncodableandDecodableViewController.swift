@@ -13,6 +13,30 @@ class EncodableandDecodableViewController: UIViewController {
         
     }
     @IBAction func send(_ sender: UIButton) {
+        let parameters = ["userId": "1", "title":"this is a title", "body": "this is a body"]
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
+        var request = URLRequest(url: url)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        
+        do {
+            let jsonBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+            request.httpBody = jsonBody
+        } catch {}
+        
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { (data, _, _) in
+            guard let data = data else  { return }
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                print(json)
+            } catch { }
+        }
+        
+       
+        task.resume()
+        
         
     }
     
