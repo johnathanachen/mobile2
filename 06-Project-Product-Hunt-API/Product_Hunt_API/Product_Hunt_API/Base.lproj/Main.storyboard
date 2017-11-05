@@ -18,30 +18,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dateCell" id="Obw-XO-dMg">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Obw-XO-dMg" id="ZqM-WI-fqt">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MONDAY, MAY 16TH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUb-Ba-PL6">
+                                            <rect key="frame" x="120" y="4" width="135" height="35.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                            <color key="textColor" red="0.44698637171323119" green="0.45411643401015234" blue="0.43686288389013417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fUb-Ba-PL6" firstAttribute="leading" secondItem="ZqM-WI-fqt" secondAttribute="leading" constant="120" id="1TG-tc-sdQ"/>
+                                        <constraint firstItem="fUb-Ba-PL6" firstAttribute="top" secondItem="ZqM-WI-fqt" secondAttribute="top" constant="4" id="Qje-9f-rv2"/>
+                                        <constraint firstAttribute="bottom" secondItem="fUb-Ba-PL6" secondAttribute="bottom" constant="4" id="d4b-wA-nJ4"/>
+                                        <constraint firstAttribute="trailing" secondItem="fUb-Ba-PL6" secondAttribute="trailing" constant="120" id="zzB-2E-qHJ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="126" id="sz3-zM-clh" customClass="PostsTableViewCell" customModule="Product_Hunt_API" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="126"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="126"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sz3-zM-clh" id="9Ao-zr-8V2">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="125.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Nsf-C3-CEF">
-                                            <rect key="frame" x="15" y="8" width="345" height="64"/>
+                                            <rect key="frame" x="15" y="8" width="345" height="70"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ms-Up-zxX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="64"/>
-                                                </imageView>
+                                                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JGG-Ag-h5p">
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="WPz-lH-ltq"/>
+                                                        <constraint firstAttribute="height" constant="70" id="u81-1g-kVt"/>
+                                                    </constraints>
+                                                    <wkWebViewConfiguration key="configuration">
+                                                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                        <wkPreferences key="preferences"/>
+                                                    </wkWebViewConfiguration>
+                                                </wkWebView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="pgW-YU-zyv">
-                                                    <rect key="frame" x="87" y="0.0" width="258" height="43.5"/>
+                                                    <rect key="frame" x="82" y="0.0" width="263" height="43.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mt4-bu-vjj">
-                                                            <rect key="frame" x="0.0" y="0.0" width="258" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="263" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eX0-2d-Z9C">
-                                                            <rect key="frame" x="0.0" y="27.5" width="258" height="16"/>
+                                                            <rect key="frame" x="0.0" y="27.5" width="263" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" red="0.65900335520466558" green="0.66951538705583757" blue="0.6440780401078674" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -51,15 +83,21 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hxM-QO-gN5">
-                                            <rect key="frame" x="15" y="82.5" width="161" height="30"/>
+                                            <rect key="frame" x="15" y="88.5" width="161" height="24"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAp-sk-8W4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="74.5" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="74.5" height="24"/>
                                                     <state key="normal" title="Upvote"/>
+                                                    <connections>
+                                                        <action selector="upVoteButton:" destination="sz3-zM-clh" eventType="touchUpInside" id="kt6-Y2-wl2"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHD-nF-KRm">
-                                                    <rect key="frame" x="86.5" y="0.0" width="74.5" height="30"/>
+                                                    <rect key="frame" x="86.5" y="0.0" width="74.5" height="24"/>
                                                     <state key="normal" title="Comments"/>
+                                                    <connections>
+                                                        <action selector="commentButton:" destination="sz3-zM-clh" eventType="touchUpInside" id="jH4-tq-8q4"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -78,9 +116,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="postImage" destination="2Ms-Up-zxX" id="Rar-Ku-xeH"/>
+                                    <outlet property="postImage" destination="Nsf-C3-CEF" id="mbb-re-g7j"/>
                                     <outlet property="postSubtitleLabel" destination="eX0-2d-Z9C" id="QVx-wl-JWL"/>
                                     <outlet property="postTitleLabel" destination="Mt4-bu-vjj" id="Qs3-dq-98t"/>
+                                    <outlet property="voteCountLabel" destination="OAp-sk-8W4" id="lU4-1O-HzC"/>
                                     <segue destination="msy-Ui-jiw" kind="show" id="AWn-Rw-QXj"/>
                                 </connections>
                             </tableViewCell>

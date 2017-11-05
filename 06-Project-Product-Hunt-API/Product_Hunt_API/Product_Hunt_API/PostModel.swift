@@ -9,6 +9,10 @@
 
 import Foundation
 
+struct ProductHunt: Decodable {
+    let posts: [Product]
+}
+
 struct Product {
     let name: String?
     let tagline: String?
@@ -51,7 +55,4 @@ extension Product: Decodable {
 
 
 
-struct ProductHunt: Decodable {
-    let posts: [Product]
-}
 

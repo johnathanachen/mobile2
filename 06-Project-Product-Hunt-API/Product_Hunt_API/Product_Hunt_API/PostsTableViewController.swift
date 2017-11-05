@@ -8,19 +8,23 @@
 
 import UIKit
 
+
 class PostsTableViewController: UITableViewController {
+    
+    var products = [Product]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        let networking = Networking()
+        networking.fetch(route: .posts) { (data) in
+            DispatchQueue.main.async {
+                guard let products = data as? [Product] else {return}
+                self.products = products
+                self.tableView.reloadData()
+            }
+        }
     }
-
-
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,18 +34,22 @@ class PostsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return self.products.count
     }
+    
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostsTableViewCell
+        
+        
+        let raw = indexPath.item
+        
+        cell.post = products[raw]
+        
         return cell
+
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.

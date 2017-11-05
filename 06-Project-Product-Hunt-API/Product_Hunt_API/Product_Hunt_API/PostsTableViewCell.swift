@@ -7,21 +7,42 @@
 //
 
 import UIKit
+import WebKit
 
 class PostsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var postImage: UIImageView!
+    // MARK: - Outlets
+    @IBOutlet weak var postImage: WKWebView!
     @IBOutlet weak var postTitleLabel: UILabel!
     @IBOutlet weak var postSubtitleLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var voteCountLabel: UIButton!
+    
+//    // MARK: - Actions
+//    @IBAction func upVoteButton(_ sender: UIButton) {
+//    }
+//    @IBAction func commentButton(_ sender: UIButton) {
+//    }
+//
+    var post: Product? {
+        didSet {
+            postTitleLabel.text = post?.name
+            print(postTitleLabel.text, "this is ")
+            postSubtitleLabel.text = post?.tagline
+            voteCountLabel.titleLabel?.text = "\(post?.votes ?? 0)"
+            let request = URLRequest(url: (post?.imageurl)!)
+            postImage.load(request)
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+//
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        // Initialization code
+//    }
+//
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
 
 }
