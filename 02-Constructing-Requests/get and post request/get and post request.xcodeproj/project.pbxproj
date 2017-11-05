@@ -13,6 +13,7 @@
 		B809343F1FAEC7E100AEFC58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B809343E1FAEC7E100AEFC58 /* Assets.xcassets */; };
 		B80934421FAEC7E100AEFC58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B80934401FAEC7E100AEFC58 /* LaunchScreen.storyboard */; };
 		B809344A1FAED6BA00AEFC58 /* EncodableandDecodableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80934491FAED6BA00AEFC58 /* EncodableandDecodableViewController.swift */; };
+		B809344C1FAEE89300AEFC58 /* postModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B809344B1FAEE89300AEFC58 /* postModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B80934411FAEC7E100AEFC58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B80934431FAEC7E100AEFC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B80934491FAED6BA00AEFC58 /* EncodableandDecodableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableandDecodableViewController.swift; sourceTree = "<group>"; };
+		B809344B1FAEE89300AEFC58 /* postModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				B80934401FAEC7E100AEFC58 /* LaunchScreen.storyboard */,
 				B80934431FAEC7E100AEFC58 /* Info.plist */,
 				B80934491FAED6BA00AEFC58 /* EncodableandDecodableViewController.swift */,
+				B809344B1FAEE89300AEFC58 /* postModel.swift */,
 			);
 			path = "get and post request";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B809343A1FAEC7E100AEFC58 /* ViewController.swift in Sources */,
+				B809344C1FAEE89300AEFC58 /* postModel.swift in Sources */,
 				B80934381FAEC7E100AEFC58 /* AppDelegate.swift in Sources */,
 				B809344A1FAED6BA00AEFC58 /* EncodableandDecodableViewController.swift in Sources */,
 			);
