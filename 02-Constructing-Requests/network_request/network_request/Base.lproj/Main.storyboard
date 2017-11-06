@@ -23,10 +23,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Seg-pS-mbO">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
                                         <state key="normal" title="GET"/>
+                                        <connections>
+                                            <action selector="GETButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hWc-MI-Vye"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWE-JQ-eqB">
                                         <rect key="frame" x="0.0" y="130" width="40" height="30"/>
                                         <state key="normal" title="POST"/>
+                                        <connections>
+                                            <action selector="POSTButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fub-av-6c3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
