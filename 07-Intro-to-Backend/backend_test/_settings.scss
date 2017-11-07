@@ -1,0 +1,33 @@
+%large-header
+{
+ font-size: 2.5rem !important;
+ font-family: 'Source Sans Pro', sans-serif;
+}
+%small-header
+{
+  font-size: 1.5rem !important;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+%description
+{
+  font-size: 1rem !important;
+
+  font-family: 'Source Sans Pro', sans-serif;
+}
+%label-buttons
+{
+ font-size: .7rem !important;
+ font-weight: bold !important;
+ letter-spacing: .1rem;
+ text-transform: uppercase;
+ font-family: 'Source Sans Pro', sans-serif;
+}
+
+%inverse-buttons
+{
+  background-color: #EE2E24;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  border: none;
+  color: #fff;
+}
