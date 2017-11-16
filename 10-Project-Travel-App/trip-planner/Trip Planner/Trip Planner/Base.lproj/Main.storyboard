@@ -8,20 +8,85 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Adventure.otf">
+            <string>Adventure</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Trip_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Trip_Planner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="GAb-v1-pbc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="7Tp-jK-PE7">
+                                <rect key="frame" x="156" y="92" width="63" height="95"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRIP PLANNER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wg6-fJ-8Ad">
+                                <rect key="frame" x="88" y="195" width="198" height="35.5"/>
+                                <fontDescription key="fontDescription" name="Adventure" family="Adventure" pointSize="28"/>
+                                <color key="textColor" red="0.91647597450336782" green="0.91204855433668497" blue="0.92090339467005078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KAK-mQ-Bxa">
+                                <rect key="frame" x="67" y="287.5" width="240" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="p88-yC-KmC"/>
+                                </constraints>
+                                <color key="textColor" red="0.72941176470588232" green="0.74117647058823533" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="je2-64-OKi">
+                                <rect key="frame" x="67" y="330.5" width="240" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="DKA-i9-EUK"/>
+                                </constraints>
+                                <color key="textColor" red="0.72941176470588232" green="0.74117647058823533" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KAK-mQ-Bxa" secondAttribute="trailing" constant="68" id="3SQ-KW-7xX"/>
+                            <constraint firstItem="je2-64-OKi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="6A2-Bn-b7V"/>
+                            <constraint firstItem="KAK-mQ-Bxa" firstAttribute="top" secondItem="Wg6-fJ-8Ad" secondAttribute="bottom" constant="57" id="6ke-aH-mMv"/>
+                            <constraint firstItem="Wg6-fJ-8Ad" firstAttribute="top" secondItem="7Tp-jK-PE7" secondAttribute="bottom" constant="8" id="9uJ-mq-EFQ"/>
+                            <constraint firstItem="GAb-v1-pbc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AYt-6M-3DB"/>
+                            <constraint firstItem="GAb-v1-pbc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JXO-qs-Fha"/>
+                            <constraint firstItem="GAb-v1-pbc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KLU-K3-1Kq"/>
+                            <constraint firstItem="je2-64-OKi" firstAttribute="top" secondItem="KAK-mQ-Bxa" secondAttribute="bottom" constant="12" id="Ll1-WL-UMM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wg6-fJ-8Ad" secondAttribute="trailing" constant="89" id="W2a-o8-cdl"/>
+                            <constraint firstItem="GAb-v1-pbc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Z8h-zg-PKM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="je2-64-OKi" secondAttribute="trailing" constant="68" id="ZDX-8O-MfQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="je2-64-OKi" secondAttribute="bottom" constant="305.5" id="dsr-en-dbo"/>
+                            <constraint firstItem="KAK-mQ-Bxa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="ety-0I-zWi"/>
+                            <constraint firstItem="7Tp-jK-PE7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="156" id="gQD-dg-PW7"/>
+                            <constraint firstItem="7Tp-jK-PE7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="oeH-3U-55a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Tp-jK-PE7" secondAttribute="trailing" constant="156" id="pzw-3o-MQn"/>
+                            <constraint firstItem="Wg6-fJ-8Ad" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="wm7-4v-ZvI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailLogin" destination="KAK-mQ-Bxa" id="1iG-9h-NrG"/>
+                        <outlet property="passwordLogin" destination="je2-64-OKi" id="kXi-vg-rSw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="32.833583208395808"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg" width="375" height="667"/>
+        <image name="logo" width="63" height="95"/>
+    </resources>
 </document>
