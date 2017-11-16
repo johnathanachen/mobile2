@@ -13,6 +13,7 @@
 		B88E3F451FBE000F0026F985 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B88E3F441FBE000F0026F985 /* Assets.xcassets */; };
 		B88E3F481FBE000F0026F985 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88E3F461FBE000F0026F985 /* LaunchScreen.storyboard */; };
 		B88E3F521FBE1AE60026F985 /* Adventure.otf in Resources */ = {isa = PBXBuildFile; fileRef = B88E3F511FBE1AD80026F985 /* Adventure.otf */; };
+		B88E3F541FBE2C590026F985 /* TripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88E3F531FBE2C590026F985 /* TripTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B88E3F471FBE000F0026F985 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B88E3F491FBE000F0026F985 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B88E3F511FBE1AD80026F985 /* Adventure.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Adventure.otf; sourceTree = "<group>"; };
+		B88E3F531FBE2C590026F985 /* TripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				B88E3F511FBE1AD80026F985 /* Adventure.otf */,
 				B88E3F3D1FBE000F0026F985 /* AppDelegate.swift */,
 				B88E3F3F1FBE000F0026F985 /* LoginViewController.swift */,
+				B88E3F531FBE2C590026F985 /* TripTableViewController.swift */,
 				B88E3F411FBE000F0026F985 /* Main.storyboard */,
 				B88E3F441FBE000F0026F985 /* Assets.xcassets */,
 				B88E3F461FBE000F0026F985 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				B88E3F401FBE000F0026F985 /* LoginViewController.swift in Sources */,
 				B88E3F3E1FBE000F0026F985 /* AppDelegate.swift in Sources */,
+				B88E3F541FBE2C590026F985 /* TripTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

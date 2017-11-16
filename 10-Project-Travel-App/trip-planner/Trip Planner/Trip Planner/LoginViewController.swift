@@ -12,11 +12,13 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailLogin: UITextField!
     @IBOutlet weak var passwordLogin: UITextField!
+    @IBOutlet weak var signupButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         inputBottomBorder()
+        signupButton.layer.cornerRadius = 5
     }
 
     func inputBottomBorder() {

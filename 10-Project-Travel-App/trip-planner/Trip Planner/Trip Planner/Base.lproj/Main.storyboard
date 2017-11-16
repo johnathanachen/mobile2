@@ -12,6 +12,9 @@
         <array key="Adventure.otf">
             <string>Adventure</string>
         </array>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Login View Controller-->
@@ -52,25 +55,41 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPo-oC-s4G">
+                                <rect key="frame" x="54" y="548" width="267" height="50"/>
+                                <color key="backgroundColor" red="0.72758537530899048" green="0.11126283556222916" blue="0.32871472835540771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mhf-Nn-Nar"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="SIGN UP"/>
+                                <connections>
+                                    <segue destination="swz-SO-Ime" kind="show" id="1Kl-CZ-eb3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="IPo-oC-s4G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="54" id="0HP-p8-dL8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KAK-mQ-Bxa" secondAttribute="trailing" constant="68" id="3SQ-KW-7xX"/>
                             <constraint firstItem="je2-64-OKi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="6A2-Bn-b7V"/>
                             <constraint firstItem="KAK-mQ-Bxa" firstAttribute="top" secondItem="Wg6-fJ-8Ad" secondAttribute="bottom" constant="57" id="6ke-aH-mMv"/>
                             <constraint firstItem="Wg6-fJ-8Ad" firstAttribute="top" secondItem="7Tp-jK-PE7" secondAttribute="bottom" constant="8" id="9uJ-mq-EFQ"/>
                             <constraint firstItem="GAb-v1-pbc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AYt-6M-3DB"/>
+                            <constraint firstItem="IPo-oC-s4G" firstAttribute="top" secondItem="je2-64-OKi" secondAttribute="bottom" constant="186.5" id="HQq-7t-XWg"/>
                             <constraint firstItem="GAb-v1-pbc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JXO-qs-Fha"/>
                             <constraint firstItem="GAb-v1-pbc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KLU-K3-1Kq"/>
                             <constraint firstItem="je2-64-OKi" firstAttribute="top" secondItem="KAK-mQ-Bxa" secondAttribute="bottom" constant="12" id="Ll1-WL-UMM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wg6-fJ-8Ad" secondAttribute="trailing" constant="89" id="W2a-o8-cdl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IPo-oC-s4G" secondAttribute="bottom" constant="69" id="X9j-AY-SD3"/>
                             <constraint firstItem="GAb-v1-pbc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Z8h-zg-PKM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="je2-64-OKi" secondAttribute="trailing" constant="68" id="ZDX-8O-MfQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="je2-64-OKi" secondAttribute="bottom" constant="305.5" id="dsr-en-dbo"/>
                             <constraint firstItem="KAK-mQ-Bxa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="ety-0I-zWi"/>
                             <constraint firstItem="7Tp-jK-PE7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="156" id="gQD-dg-PW7"/>
                             <constraint firstItem="7Tp-jK-PE7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="oeH-3U-55a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Tp-jK-PE7" secondAttribute="trailing" constant="156" id="pzw-3o-MQn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IPo-oC-s4G" secondAttribute="trailing" constant="54" id="vu2-8t-y3O"/>
                             <constraint firstItem="Wg6-fJ-8Ad" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="wm7-4v-ZvI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -78,11 +97,40 @@
                     <connections>
                         <outlet property="emailLogin" destination="KAK-mQ-Bxa" id="1iG-9h-NrG"/>
                         <outlet property="passwordLogin" destination="je2-64-OKi" id="kXi-vg-rSw"/>
+                        <outlet property="signupButton" destination="IPo-oC-s4G" id="JUB-Av-Dc8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="32.833583208395808"/>
+        </scene>
+        <!--Trip Table View Controller-->
+        <scene sceneID="Ku3-Rb-Gne">
+            <objects>
+                <tableViewController id="swz-SO-Ime" customClass="TripTableViewController" customModule="Trip_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xkf-wM-xDW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lly-2P-FYc">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lly-2P-FYc" id="gqn-Qe-fFf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="swz-SO-Ime" id="ZR0-2c-iHL"/>
+                            <outlet property="delegate" destination="swz-SO-Ime" id="fWq-2L-TH2"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ivw-mD-0hf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="754" y="31"/>
         </scene>
     </scenes>
     <resources>
