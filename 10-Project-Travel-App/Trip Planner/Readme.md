@@ -1,13 +1,8 @@
+# Project - Travel App API Project Spec
+
 ```
 FLASK_APP=app.py flask run
 ```
-
-# Project - Travel App API Project Spec
-
-Here is a link to some starter code for building this project:
-
-[Trip Planner Flask Starter](https://github.com/Product-College-Labs/trip-planner)
-
 ## Overview
 
 We will be building a trip planning app that stores a list of trips for a user.
